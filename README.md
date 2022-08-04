@@ -1,5 +1,5 @@
 # YouRater
-YouRater is my Chrome extension project that I have worked on for my summer internship. It allows for videos to be rated on a scale for 1-5 instead of Youtubes current way of doing it, which is a like count.
+YouRater is my Chrome extension project that I have worked on for my summer internship. It allows for videos to be rated on a scale of 1-5 instead of Youtubes current way of doing it, which is a like count.
 <p align="center">
 <img src="images/screenshot1.png" width=400>
 </p>
