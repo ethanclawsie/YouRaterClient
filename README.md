@@ -1,5 +1,6 @@
 # YouRater-Client
 
+Extension:
 <p align="center">
 <img src="images/screenshot1.png" width=400>
 </p>
