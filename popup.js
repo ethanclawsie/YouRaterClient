@@ -75,6 +75,9 @@ function b1pressed() {
         uuid: result.storeduuid,
       }),
     });
+    setTimeout(function () {
+      window.location.reload();
+    }, 200);
   });
 }
 //Sets the rating for the video to 1
@@ -90,6 +93,9 @@ function b2pressed() {
         uuid: result.storeduuid,
       }),
     });
+    setTimeout(function () {
+      window.location.reload();
+    }, 200);
   });
 }
 //Sets the rating for the video to 2
@@ -105,6 +111,9 @@ function b3pressed() {
         uuid: result.storeduuid,
       }),
     });
+    setTimeout(function () {
+      window.location.reload();
+    }, 200);
   });
 }
 //Sets the rating for the video to 3
@@ -120,6 +129,9 @@ function b4pressed() {
         uuid: result.storeduuid,
       }),
     });
+    setTimeout(function () {
+      window.location.reload();
+    }, 200);
   });
 }
 //Sets the rating for the video to 4
@@ -135,6 +147,9 @@ function b5pressed() {
         uuid: result.storeduuid,
       }),
     });
+    setTimeout(function () {
+      window.location.reload();
+    }, 200);
   });
 }
 //Sets the rating for the video to 5
