@@ -1,7 +1,7 @@
 # YouRater-Client
 
 <p align="center">
-<img src="images/screenshot1.png" width=600>
+<img src="images/screenshot1.png" width=400>
 </p>
   
 Map:
