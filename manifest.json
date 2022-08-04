@@ -1,0 +1,26 @@
+{
+  "name": "YouRater",
+  "description": "An extension that allows the user to rate videos on Youtube.",
+  "version": "0.1",
+  "manifest_version": 3,
+  "options_page": "options.html",
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "run_at": "document_end",
+      "js": ["content.js"]
+    }
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "permissions": ["storage"],
+  "action": { "default_popup": "popup.html" }
+}

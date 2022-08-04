@@ -1,0 +1,73 @@
+body {
+  width: 500px;
+  height: 335px;
+  background-color: rgb(53, 54, 58);
+  text-align: center;
+}
+
+h1 {
+  margin-top: 20px;
+  margin: 0;
+  color: white;
+}
+
+h4 {
+  color: rgb(187, 187, 187);
+  margin: 0;
+}
+
+.multiline {
+  white-space: pre-wrap;
+  color: white;
+}
+
+input[type="radio"] {
+  display: none;
+  visibility: collapse;
+}
+
+.rate {
+  margin-right: 35%;
+  margin-top: 2%;
+  height: 46px;
+  padding: 0px;
+}
+.rate:not(:checked) > input {
+  position: absolute;
+  top: -9999px;
+}
+.rate:not(:checked) > label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 30px;
+  color: #ccc;
+}
+
+.rate > input:checked ~ label {
+  color: #ff0000;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+  color: #ff0000;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+  color: #ff0000;
+}
+
+#averagerating {
+  color: white;
+}
+
+.image {
+  width: 25%;
+  height: 18.75%;
+  margin-top: 1%;
+  object-fit: cover;
+}
