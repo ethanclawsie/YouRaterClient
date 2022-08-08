@@ -64,13 +64,13 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("star5").addEventListener("click", b5pressed);
 });
 
-function b1pressed() {
+function pressed(stars) {
   chrome.storage.local.get(["storedvideoid", "storeduuid"], function (result) {
     fetch("http://147.182.241.206:4040/valget", {
       headers: { "Content-Type": "application/json" },
       method: "POST",
       body: JSON.stringify({
-        value: 1,
+        value: stars,
         videoid: result.storedvideoid,
         uuid: result.storeduuid,
       }),
@@ -79,77 +79,29 @@ function b1pressed() {
       window.location.reload();
     }, 200);
   });
+}
+
+function b1pressed() {
+  pressed(1);
 }
 //Sets the rating for the video to 1
 
 function b2pressed() {
-  chrome.storage.local.get(["storedvideoid", "storeduuid"], function (result) {
-    fetch("http://147.182.241.206:4040/valget", {
-      headers: { "Content-Type": "application/json" },
-      method: "POST",
-      body: JSON.stringify({
-        value: 2,
-        videoid: result.storedvideoid,
-        uuid: result.storeduuid,
-      }),
-    });
-    setTimeout(function () {
-      window.location.reload();
-    }, 200);
-  });
+  pressed(2);
 }
 //Sets the rating for the video to 2
 
 function b3pressed() {
-  chrome.storage.local.get(["storedvideoid", "storeduuid"], function (result) {
-    fetch("http://147.182.241.206:4040/valget", {
-      headers: { "Content-Type": "application/json" },
-      method: "POST",
-      body: JSON.stringify({
-        value: 3,
-        videoid: result.storedvideoid,
-        uuid: result.storeduuid,
-      }),
-    });
-    setTimeout(function () {
-      window.location.reload();
-    }, 200);
-  });
+  pressed(3);
 }
 //Sets the rating for the video to 3
 
 function b4pressed() {
-  chrome.storage.local.get(["storedvideoid", "storeduuid"], function (result) {
-    fetch("http://147.182.241.206:4040/valget", {
-      headers: { "Content-Type": "application/json" },
-      method: "POST",
-      body: JSON.stringify({
-        value: 4,
-        videoid: result.storedvideoid,
-        uuid: result.storeduuid,
-      }),
-    });
-    setTimeout(function () {
-      window.location.reload();
-    }, 200);
-  });
+  pressed(4);
 }
 //Sets the rating for the video to 4
 
 function b5pressed() {
-  chrome.storage.local.get(["storedvideoid", "storeduuid"], function (result) {
-    fetch("http://147.182.241.206:4040/valget", {
-      headers: { "Content-Type": "application/json" },
-      method: "POST",
-      body: JSON.stringify({
-        value: 5,
-        videoid: result.storedvideoid,
-        uuid: result.storeduuid,
-      }),
-    });
-    setTimeout(function () {
-      window.location.reload();
-    }, 200);
-  });
+  pressed(5);
 }
 //Sets the rating for the video to 5
