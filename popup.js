@@ -38,7 +38,7 @@ async function getdata() {
         var avg = await avgresponse.text();
         document.getElementById("averagerating").innerHTML = avg;
       })();
-      //Gets the average rating count
+      //Gets the average rating
 
       var yourresponse = await fetch("http://147.182.241.206:4040/yourget", {
         headers: { "Content-Type": "application/json" },
