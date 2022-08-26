@@ -1,5 +1,5 @@
 # YouRater
-YouRater is my Chrome extension project that I have worked on for my summer internship. This extension provides more in-depth options to reviewing videos on YouTube. Currently, YouTube has a like and a dislike button, but this extension adds a system whereby users can rate videos on a five-star basis. Users can also see the number of ratings each video has, as well as the average rating of the video.
+YouRater is my [Chrome extension](https://chrome.google.com/webstore/detail/yourater/jaeknakgpdaejbfmdimdpnmmllloifhb) project that I have worked on for my summer internship. This extension provides more in-depth options to reviewing videos on YouTube. Currently, YouTube has a like and a dislike button, but this extension adds a system whereby users can rate videos on a five-star basis. Users can also see the number of ratings each video has, as well as the average rating of the video.
 <p align="center">
 <img src="images/screenshot1.png" width=400>
 </p>
