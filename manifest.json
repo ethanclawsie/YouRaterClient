@@ -1,7 +1,7 @@
 {
   "name": "YouRater",
   "description": "An extension for rating videos on YouTube. ",
-  "version": "0.2",
+  "version": "0.3",
   "manifest_version": 3,
   "options_page": "options.html",
   "icons": {
