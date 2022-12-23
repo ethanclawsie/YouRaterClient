@@ -10,48 +10,65 @@ async function getdata() {
       //Sets the thumbnail and video name
 
       (async () => {
-        var countresponse = await fetch(
-          "http://147.182.241.206:4040/countget",
-          {
-            headers: { "Content-Type": "application/json" },
-            method: "POST",
-            body: JSON.stringify({
-              videoid: result.storedvideoid,
-              uuid: result.storeduuid,
-            }),
-          }
-        );
-        var count = await countresponse.text();
-        document.getElementById("ratingcount").innerHTML = count;
+        fetch("http://localhost:8080/countget", {
+          method: "POST",
+          body: new URLSearchParams({
+            videoid: result.storedvideoid,
+          }),
+        })
+          .then((res) => res.text())
+          .then((res) => {
+            if (res === "0") {
+              document.getElementById("ratingcount").innerHTML =
+                "No ratings yet";
+            } else {
+              document.getElementById("ratingcount").innerHTML = res;
+            }
+          });
       })();
+
       //Gets the rating count
 
       (async () => {
-        var avgresponse = await fetch("http://147.182.241.206:4040/avgget", {
-          headers: { "Content-Type": "application/json" },
+        fetch("http://localhost:8080/avgget", {
+          //works
           method: "POST",
-          body: JSON.stringify({
+          body: new URLSearchParams({
             videoid: result.storedvideoid,
-            uuid: result.storeduuid,
           }),
-        });
-        var avg = await avgresponse.text();
-        document.getElementById("averagerating").innerHTML = avg;
+        })
+          .then((res) => res.text())
+          .then((res) => {
+            if (res === "0.0") {
+              document.getElementById("averagerating").innerHTML =
+                "No ratings yet";
+            } else {
+              document.getElementById("averagerating").innerHTML = res;
+            }
+          });
       })();
       //Gets the average rating
 
-      var yourresponse = await fetch("http://147.182.241.206:4040/yourget", {
-        headers: { "Content-Type": "application/json" },
-        method: "POST",
-        body: JSON.stringify({
-          videoid: result.storedvideoid,
-          uuid: result.storeduuid,
-        }),
-      });
-      var your = await yourresponse.text();
-      document.getElementById("yourrating").innerHTML = your;
+      (async () => {
+        fetch("http://localhost:8080/yourget", {
+          method: "POST",
+          body: new URLSearchParams({
+            videoid: result.storedvideoid,
+            userid: result.storeduuid,
+          }),
+        })
+          .then((res) => res.text())
+          .then((res) => {
+            if (res === "") {
+              document.getElementById("yourrating").innerHTML =
+                "No ratings yet";
+            } else {
+              document.getElementById("yourrating").innerHTML = res;
+            }
+          });
+      })();
+      //Gets the users rating
     }
-    //Gets the users rating
   );
 }
 
@@ -66,18 +83,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function pressed(stars) {
   chrome.storage.local.get(["storedvideoid", "storeduuid"], function (result) {
-    fetch("http://147.182.241.206:4040/valget", {
-      headers: { "Content-Type": "application/json" },
+    fetch("http://localhost:8080/valget", {
       method: "POST",
-      body: JSON.stringify({
+      body: new URLSearchParams({
         value: stars,
         videoid: result.storedvideoid,
-        uuid: result.storeduuid,
+        userid: result.storeduuid,
       }),
     });
-    setTimeout(function () {
-      window.location.reload();
-    }, 200);
+    window.location.reload();
   });
 }
 
