@@ -10,7 +10,7 @@ async function getdata() {
       //Sets the thumbnail and video name
 
       (async () => {
-        fetch("http://localhost:8080/countget", {
+        fetch("https://YouRaterServerGo.ethancl.repl.co/countget", {
           method: "POST",
           body: new URLSearchParams({
             videoid: result.storedvideoid,
@@ -30,7 +30,7 @@ async function getdata() {
       //Gets the rating count
 
       (async () => {
-        fetch("http://localhost:8080/avgget", {
+        fetch("https://YouRaterServerGo.ethancl.repl.co/avgget", {
           //works
           method: "POST",
           body: new URLSearchParams({
@@ -50,7 +50,7 @@ async function getdata() {
       //Gets the average rating
 
       (async () => {
-        fetch("http://localhost:8080/yourget", {
+        fetch("https://YouRaterServerGo.ethancl.repl.co/yourget", {
           method: "POST",
           body: new URLSearchParams({
             videoid: result.storedvideoid,
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function pressed(stars) {
   chrome.storage.local.get(["storedvideoid", "storeduuid"], function (result) {
-    fetch("http://localhost:8080/valget", {
+    fetch("https://YouRaterServerGo.ethancl.repl.co/valget", {
       method: "POST",
       body: new URLSearchParams({
         value: stars,
@@ -91,7 +91,9 @@ function pressed(stars) {
         userid: result.storeduuid,
       }),
     });
-    window.location.reload();
+    setTimeout(function () {
+      window.location.reload();
+    }, 200);
   });
 }
 

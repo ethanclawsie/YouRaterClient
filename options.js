@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function deletepressed() {
   chrome.storage.local.get(["storeduuid"], function (result) {
-    fetch("http://localhost:8080/deletedata", {
+    fetch("https://YouRaterServerGo.ethancl.repl.co/deletedata", {
       method: "POST",
       body: new URLSearchParams({
         value: 1,
